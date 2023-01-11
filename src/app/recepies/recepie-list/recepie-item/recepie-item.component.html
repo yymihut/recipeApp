@@ -1,1 +1,14 @@
-<p>recepie-item works!</p>
+<a href="#" class="list-group-item clearfix" >
+  <div class="pull-left">
+    <h4 class="list-group-item-heading">{{ reteta.name }}</h4>
+    <p class="list-group-item-text">{{ reteta.description }}</p>
+  </div>
+  <span class="pull-right">
+    <img
+      src="{{ reteta.imagePath }}"
+      alt="{{ reteta.name }}"
+      class="img-fluid"
+      style="height: 30%"
+    />
+  </span>
+</a>
