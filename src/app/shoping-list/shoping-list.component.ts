@@ -12,4 +12,8 @@ export class ShopingListComponent {
     new Ingredient ('Rosii', 10)
   ];
 
+  onIngredientAdded(ingr: Ingredient) {
+    this.ingredients.push(ingr);
+  }
+
 }
