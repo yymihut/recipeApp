@@ -16,16 +16,19 @@ export class ShopingEditComponent implements OnInit {
   ngOnInit(): void {
     //Called after the constructor, initializing input properties, and the first call to ngOnChanges.
     //Add 'implements OnInit' to the class.
-
   }
 
   constructor(private shopService: ShoppingListService) {}
 
   onAddItem() {
+    event?.preventDefault();
     const ingName = this.nameInputRef.nativeElement.value;
     const ingAmount = this.amountInputRef.nativeElement.value;
     const newIngredient = new Ingredient(ingName, ingAmount);
 
     this.shopService.addIngredient(newIngredient);
+
+    // this.nameInputRef.nativeElement.value = '';
+    // this.amountInputRef.nativeElement.value = '';
   }
 }

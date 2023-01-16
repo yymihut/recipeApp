@@ -14,10 +14,11 @@ export class ShopingListComponent implements OnInit {
 
   ngOnInit() {
     this.ingredients = this.shopService.getIngredients();
+    this.shopService.ingredientsChaged.subscribe((ingr: Ingredient[]) => {
+      this.ingredients = ingr;
+      console.log('ingredientsChaged.subscribe' + ingr);
+    });
     //daca facem cu slice la getIngredients() tb sa informam despre schimbare si aici:
-    // this.shopService.ingredientsChaged.subscribe((ingr: Ingredient[]) => {
-    //   this.ingredients = ingr; });
-
 
     //Called after the constructor, initializing input properties, and the first call to ngOnChanges.
     //Add 'implements OnInit' to the class.
